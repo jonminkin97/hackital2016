@@ -31,12 +31,11 @@ apiurl=apirequest(lat,long)
 response=requests.get(apiurl)
 data=response.json()
 
-#ispleasant = FALSE
-#temperaturestorage = currenttemp
-#if temperaturestorage >= 55 and temperaturestorage <= 80
-#    ispleasant = TRUE
+temperaturestorage = currentTemp()
+precipstorage = precipitation()
+ispleasant = (temperaturestorage >= 55 and temperaturestorage <= 80 and precipstorage == False)
 
-print(precipitation(),currentTemp())
+print(precipitation(),temperaturestorage,ispleasant)
 #print("Current Temperature: ",currenttemp)
 #print("Precipitation: ",precipitation)
 
